@@ -1,30 +1,78 @@
 .header {
-  padding: 10px 0;
   background-color: $headerBgColor;
   color: $headerFontColor;
   overflow: hidden;
+  position: relative;
+
+  @media (min-width: 932px) {
+    padding-left: 20px;
+    margin: 0 auto;
+  }
 
   &__top {
     position: relative;
     display: flex;
-    justify-content: center;
-    padding: 20px 10px;
+    justify-content: space-between;
+    padding: 23px 20px 29px;
+
+    @media (min-width: 932px) {
+      max-width: 1151px;
+    }
   }
 
   &__site-logo {
     width: 100px;
+
+    @media (min-width: 932px) {
+      width: 75px;
+    }
+  }
+
+  &__form {
+    display: none;
+    padding-top: 2px;
+    padding-left: 30px;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__search-label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/search.png);
+    }
   }
 
   &__search-bar {
-    display: none;
+    width: 0;
+    height: 25px;
+    padding: 0;
+    border: none;
+    transition: width 0.5s;
+
+    &:focus {
+      width: 200px;
+      outline: none;
+    }
   }
 
   &__menu-button {
-    position: absolute;
-    top: 20px;
-    right: 10px;
+    position: relative;
+    top: 5px;
     width: 50px;
     height: 14px;
+    cursor: pointer;
 
     &::before {
       @extend %menuButtonElement;
@@ -43,6 +91,47 @@
 
   &__main-menu {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(20, 52, 225, 0.9);
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    z-index: 3;
+
+    &--opened {
+      display: block;
+    }
+  }
+
+  &__menu-item {
+    width: 318px;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0);
+
+    &:hover {
+      border-bottom-color: rgba($color: #fff, $alpha: 1);
+    }
+  }
+
+  &__main {
+    position: relative;
+  }
+
+  &__main-wrapper {
+    position: relative;
+
+    @media (min-width: 932px) {
+      height: 758px;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__content {
@@ -50,22 +139,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   &__title {
     position: relative;
     z-index: 2;
-    padding: 30px 20px 20px;
+    padding: 30px 0 20px;
     text-align: center;
     font-weight: 700;
+    letter-spacing: -1px;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+
+    @media (min-width: 932px) {
+      width: 50%;
+      padding-top: 94px;
+      align-self: flex-start;
+      text-align: left;
+      line-height: 70px;
+    }
   }
 
   &__description {
     position: relative;
     z-index: 2;
-    padding: 20px;
+    padding: 80px 50px;
     text-align: center;
     font-size: 14px;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (min-width: 932px) {
+      box-sizing: border-box;
+      padding: 6px 80px 56px 0;
+      width: 50%;
+      align-self: flex-start;
+      text-align: left;
+      line-height: 28px;
+    }
   }
 
   &__button {
@@ -75,10 +191,22 @@
     height: 50px;
     background-color: #4737ff;
     border: none;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 4px;
     color: #fff;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+
+    &:hover {
+      color: #4737ff;
+      background-color: #fff;
+    }
+
+    @media (min-width: 932px) {
+      align-self: flex-start;
+    }
   }
 
   &__slider-controls {
@@ -89,6 +217,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 932px) {
+      position: absolute;
+      bottom: 97px;
+      width: 341px;
+      align-self: start;
+      padding: 0;
+    }
   }
 
   &__slider-bar {
@@ -97,6 +233,10 @@
     width: 190px;
     height: 2px;
     background-color: #d7d4d4;
+
+    @media (min-width: 932px) {
+      width: 278px;
+    }
   }
 
   &__slider-mark {
@@ -106,6 +246,10 @@
 
   &__card-number {
     font-size: 14px;
+
+    @media (min-width: 932px) {
+      font-size: 18px;
+    }
   }
 
   &__bg-container {
@@ -113,14 +257,28 @@
     top: 0;
     left: 50%;
     right: 0;
-    height: 230px;
     background-image: url(../images/header-bg.jpg);
     background-size: cover;
-    z-index: 1;
+    z-index: 0;
+    height: 60%;
+
+    @media (min-width: 932px) {
+      height: 100%;
+      margin-left: 14px;
+    }
   }
 
   &__videoblock {
     position: relative;
+    z-index: 1;
+
+    @media (min-width: 932px) {
+      margin: 0 auto 0 444px;
+      bottom: 61px;
+      width: 400px;
+      height: 310px;
+      z-index: 2;
+    }
   }
 
   &__video {
@@ -128,21 +286,10 @@
   }
 
   &__videoblock-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 65px;
-    height: 65px;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
+    @extend %playButtonBase;
   }
 
   &__play-triangle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
+    @extend %playButtonTriangle;
   }
 }
