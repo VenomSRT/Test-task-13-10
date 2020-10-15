@@ -91,7 +91,7 @@
 
   &__menu-container {
     position: relative;
-    width: 1046px;
+    max-width: 1046px;
     margin: 0 auto;
   }
 
@@ -289,7 +289,7 @@
     background-image: url(../images/header-bg.jpg);
     background-size: cover;
     z-index: 0;
-    height: 60%;
+    height: 90%;
 
     @media (min-width: 932px) {
       height: 100%;

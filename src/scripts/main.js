@@ -6,7 +6,8 @@ document.addEventListener('click', (event) => {
       .className = 'header__main-menu header__main-menu--opened';
   }
 
-  if (event.target.className === 'header__close-button') {
+  if (event.target.className === 'header__close-button'
+    || event.target.className === 'header__menu-link') {
     document.querySelector('.header__main-menu')
       .className = 'header__main-menu';
   }
