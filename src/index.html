@@ -32,7 +32,11 @@
               class="header__search-bar">
           </label>
         </form>
-        <div class="header__menu-button"></div>
+        <div
+          class="header__menu-button"
+
+        >
+        </div>
       </div>
 
       <div class="header__main">
@@ -86,25 +90,28 @@
       </div>
 
       <nav class="header__main-menu">
-        <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">About</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Works</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Team</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Contact Us</a>
-          </li>
-        </ul>
+        <div class="header__menu-container">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a href="#about" class="header__menu-link">About</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#works" class="header__menu-link">Works</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#team" class="header__menu-link">Team</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#contact" class="header__menu-link">Contact Us</a>
+            </li>
+          </ul>
+          <div class="header__close-button"></div>
+        </div>
       </nav>
     </header>
 
     <main class="main-container">
-      <div class="main-container__top container">
+      <div id="about" class="main-container__top container">
         <h3 class="main-container__title">
           &mdash; Services
         </h3>
@@ -127,7 +134,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div id="works" class="container">
         <div class="main-container__gallery">
           <div class="main-container__videoblock">
             <video
@@ -177,7 +184,7 @@
 
     <footer class="footer">
       <div class="footer__top-container">
-        <div class="footer__top">
+        <div id="contact" class="footer__top">
           <a href="#" class="footer__logo-link">
             <img
               src="./images/logo.svg"
@@ -287,6 +294,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
