@@ -1,7 +1,51 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  font-family: $pageFont;
+  font-weight: 400;
 }
+
+div {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  @media (min-width: 932px) {
+    max-width: 1110px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+}
+
+@import "header";
+@import "main-container";
+@import "footer";
